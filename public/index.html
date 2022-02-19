@@ -1,0 +1,352 @@
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="shortcut icon" href="./files/icon.ico">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" referrerpolicy="no-referrer"></script>
+        <!-- The core Firebase JS SDK is always required and must be listed first -->
+        <script src="https://www.gstatic.com/firebasejs/8.2.4/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.2.4/firebase-auth.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.2.4/firebase-firestore.js"></script>
+    <script type="module">
+      const firebaseConfig = {
+        apiKey: "AIzaSyAAkQbVT0WzvRY6J9omiVZlNTgYhjy8WBc",
+        authDomain: "findvalentineon.firebaseapp.com",
+        projectId: "findvalentineon",
+        storageBucket: "findvalentineon.appspot.com",
+        messagingSenderId: "858811260167",
+        appId: "1:858811260167:web:5e348762966af4ca1f39a2"
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+      </script>
+        <script src="app.js" defer></script>
+        <script src="./modal.js" defer></script>
+        <link rel="stylesheet" href="./style.css">
+        <link rel="stylesheet" href="./star.css">
+        <title>Finder</title>
+      </head>
+      <body>
+        <div id="myModal" class="modal">
+          <!-- Modal content -->
+          <div class="modal-content">
+            <span class="close">&times;</span>
+            <div class="modal-box">
+              <p id="modal-title">Modal</p>
+                <p id="modal-data">Some text in the Modal..</p>
+              </div>
+              <p id="modal-bottom">Made with 💖 by <a target="_blank" href="https://www.linkedin.com/in/007hyno/">007hyno</a></p>
+            </div>
+          </div>
+
+
+          <!--Feedback modal -->
+          <div id="fmyModal" class="modal">
+            <!-- Modal content -->
+            <div class="modal-content">
+              <span id="fclose" class="close">&times;</span>
+              <div class="modal-box">
+                <p id="f-modal-title">Give feedback</p>
+
+          <div class="stars">
+            <input value="5" class="star star-5" id="star-5-2" type="radio" name="star"/>
+            <label class="star star-5" for="star-5-2"></label>
+            <input value="4" class="star star-4" id="star-4-2" type="radio" name="star"/>
+            <label class="star star-4" for="star-4-2"></label>
+            <input value="3" class="star star-3" id="star-3-2" type="radio" name="star"/>
+            <label class="star star-3" for="star-3-2"></label>
+            <input value="2" class="star star-2" id="star-2-2" type="radio" name="star"/>
+            <label class="star star-2" for="star-2-2"></label>
+            <input value="1" class="star star-1" id="star-1-2" type="radio" name="star"/>
+            <label class="star star-1" for="star-1-2"></label>
+            <div class="rev-box">
+              <textarea id="feedback-text" class="review" col="30" name="review" maxlength="1069" placeholder="Write your review here.."></textarea>
+              <button id="fb-submit" class="review" for="review">Submit</button>
+            </div>
+          </div>
+
+        </div>
+        <p id="f-modal-bottom">Made with 💖 by <a target="_blank" href="https://www.linkedin.com/in/007hyno/">007hyno</a></p>
+      </div>
+    </div>
+
+
+
+          <!-- profile modal -->
+          <div id="profileModal" class="modalP">
+            <div class="p-modal-content">
+              <span  id="closed" class="close">&times;</span>
+              <!-- <section class="modal-profile"> -->
+                <div class="top-mid">
+                    <div class="topp ">
+                        <div class="profile-pic">
+                            <img id="m-profile-picture" class="shadow profile-picture" src="https://www.bootdey.com/img/Content/avatar/avatar2.png" alt="">
+                        </div>
+                        <div class="userinfo-m">
+                            <h1 id="m-username" class="name sp ">Sandeep Rawat</h1>
+                            <h3 id="m-age"class="age sp">Age-</h3>
+                            <h3 id="m-gender"class="gender sp">Gender- </h3>
+                            <h3 class="ast"><img id="m-igLogo" src="./sign/instagram.svg"class="svg" alt=""><a class="link" target="_blank" id="m-instagram" href="">- </a></h3>
+                            
+                          </div>
+                        </div>
+                        <h3 class="bio" id="m-bio"> Tell me something about you...</h3>
+                        <div class="userinfo2">
+                          <div class="temp">
+                            <h3 href="#" id="insta-link" class=" bb shadow instagram">
+                              <img src="sign/capricornus.svg" id="m-zodiac" class="svg sp">  
+                              <!-- <img id="" src="./sign/instagram.svg"class="svg" alt=""> -->
+                              <p class="" id="m-zodiac-text"> Zodiac</p>
+                                </h3>
+                                <h3 class="bb shadow occupation"><img class="clg svg" src="./sign/education.svg" alt=""> <p id="m-profession"> College </p></h3>
+                                <h3 class="bb shadow location"> <img src="./sign/location.svg"class="svg" alt=""> <p id="m-location">Delhi</p> </h3>
+                            </div>
+                    </div>
+                    <div class="kara">
+                        <h3 class="cont shadow quote" id="m-quote">-"</h3>
+                    </div>
+                </div>
+                <p id="p-modal-bottom">Made with 💖 by <a target="_blank" href="https://www.linkedin.com/in/007hyno/">007hyno</a></p>            <!-- </section> -->
+              
+            </div>
+      </div>
+        
+        <section class="" id="whenSignedOut">
+          <div class="center-container">
+            <div class="top shadow">
+              <h1 class="" id="login-text">Findvalentineon.web.app</h1>
+            </div>
+          
+            <div class="quiz-container">
+                <div class="quiz-header" id="pg">
+                  <!-- <img src="./files/png.jpg" width="100px" alt=""> -->
+                  <p class="welcome">Connecting People <span class="site-name"></span>  </p>
+                  <h2 class="wel" id="What-up">Free login & meet people with similar interests.</h2>
+                </div>
+                <div class="img-div">
+                  <img class="login-img" src="./files/test4.jpg" alt="">
+                </div>
+                <!-- <button class="login-btn">
+                </button> -->
+                <a class="login-btn" href="#" id="signInBtn">
+                  <img id="google" src="./files/google.svg" alt="">
+                  Sign In With Google
+                </a>
+              </div>
+              <p class="condition" id="What-up">By signing up, you are agree to our <a href="./terms.html"> Terms of Service</a>  and <a href="./privacy.html"> Privacy Policy</a>.</p>
+                <div class="details-btn">What does this App do?</div>
+                <div class="details">
+                <p> <span class="details-head"> Step1- </span>  Login</p>
+                <p> <span class="details-head"> Step2-</span> Make Profile</p>
+                <p> <span class="details-head"> Step3-</span> Take a quick Personality quiz</p>
+                <p> <span class="details-head"> Step4-</span> Meet New people with similar interests.</p>
+                </div>
+              <!-- <div class="details">
+                <p> <span class="details-head"> Step1-</span> Login</p>
+                <p> <span class="details-head"> Step2-</span> Make Profile</p>
+                <p> <span class="details-head"> Step3-</span> Meet New people with similar interests.</p> -->
+                <!-- I am not going to use your name for my beniefit -->
+              <!-- </div> -->
+                <br>
+          </div>
+
+
+          
+        </section>
+        <section class="" id="whenSignedIn" hidden="true">          
+
+
+  <!-- ➕➕➕➕➕➕➕➕➕➕🔴🔴🔴🔴🔴🔴🔴🔴🔴⭕⭕⭕👩‍🦰 -->
+  <!-- <section class="section">
+    <ul id="thingsList">
+
+    </ul>
+
+    <button id="createData" class="bt btn btn-success">Create User Data</button>
+    <button id="createInfo" class="bt  btn-success">Create User Info</button>
+
+    <select name="state" id="state" class="form-control">
+      <option value="Andhra Pradesh">Andhra Pradesh</option>
+      <option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>
+      <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+      <option value="Assam">Assam</option>
+      <option value="Bihar">Bihar</option>
+      <option value="Chandigarh">Chandigarh</option>
+      <option value="Chhattisgarh">Chhattisgarh</option>
+      <option value="Dadar and Nagar Haveli">Dadar and Nagar Haveli</option>
+      <option value="Daman and Diu">Daman and Diu</option>
+      <option value="Delhi">Delhi</option>
+      <option value="Lakshadweep">Lakshadweep</option>
+      <option value="Puducherry">Puducherry</option>
+      <option value="Goa">Goa</option>
+      <option value="Gujarat">Gujarat</option>
+      <option value="Haryana">Haryana</option>
+      <option value="Himachal Pradesh">Himachal Pradesh</option>
+      <option value="Jammu and Kashmir">Jammu and Kashmir</option>
+      <option value="Jharkhand">Jharkhand</option>
+      <option value="Karnataka">Karnataka</option>
+      <option value="Kerala">Kerala</option>
+      <option value="Madhya Pradesh">Madhya Pradesh</option>
+      <option value="Maharashtra">Maharashtra</option>
+      <option value="Manipur">Manipur</option>
+      <option value="Meghalaya">Meghalaya</option>
+      <option value="Mizoram">Mizoram</option>
+      <option value="Nagaland">Nagaland</option>
+      <option value="Odisha">Odisha</option>
+      <option value="Punjab">Punjab</option>
+      <option value="Rajasthan">Rajasthan</option>
+      <option value="Sikkim">Sikkim</option>
+      <option value="Tamil Nadu">Tamil Nadu</option>
+      <option value="Telangana">Telangana</option>
+      <option value="Tripura">Tripura</option>
+      <option value="Uttar Pradesh">Uttar Pradesh</option>
+      <option value="Uttarakhand">Uttarakhand</option>
+      <option value="West Bengal">West Bengal</option>
+      </select>
+
+  </section> -->
+
+
+
+  <!-- ---------------------------------------------------- -->
+  <div id="Profile-card">
+  <section class="" id="Profile">
+    <div class="top-mid">
+      <a id="feedback">Feedback</a>
+        <div class="topp ">
+            <div class="profile-pic">
+                <img id="profile-picture" class="shadow" src="https://www.bootdey.com/img/Content/avatar/avatar2.png" alt="">
+            </div>
+            <div class="userinfo">
+                <h1 id="username" class="name sp "></h1>
+                <h3 id="age"class="age sp">Age-</h3>
+                <h3 id="gender"class="gender sp">Gender- </h3>
+                <h3 class="ast"><img id="igLogo" src="./sign/instagram.svg"class="svg" alt=""><a class="link" target="_blank" id="instagram" href="">- </a></h3>
+                
+              </div>
+            </div>
+            <h3 class="  bio" id="bio"> Tell me something about you...</h3>
+            <div class="userinfo2">
+              <div class="temp">
+                <h3 href="#" id="insta-link" class=" bb shadow instagram">
+                  <img src="sign/capricornus.svg" id="zodiac" class="svg sp">  
+                  <!-- <img id="" src="./sign/instagram.svg"class="svg" alt=""> -->
+                  <p class="" id="zodiac-text"> Zodiac</p>
+                    </h3>
+                    <h3><i class="fi fi-rr-briefcase"></i></h3>
+                    <h3 class="bb shadow occupation"><img class="clg svg" src="./sign/education.svg" alt=""> <p id="profession"> College </p></h3>
+                    <h3 class="bb shadow location"> <img src="./sign/location.svg"class="svg" alt=""> <p id="location">Delhi</p> </h3>
+                </div>
+        </div>
+        <div class="kara">
+            <h3 class="cont shadow quote" id="quote">-"</h3>
+        </div>
+    </div>
+</section>
+<div class="hr">
+  <hr>
+</div>
+<section class="">
+    <div class="bottom">
+        <div class="text-title">
+            <!-- <h3 class="sp cont">Demo text Your friends here...😊</h3> -->
+            <h3 class="sp shadow heading">Here are your similar interest matches💘</h3>
+        </div>
+        <div class="lists">
+            <ul class="cont-res" id="matchl">
+                <!-- <li class="li shadow">
+                  <div class="gpa">
+                    <img class="pic" src="https://www.bootdey.com/img/Content/avatar/avatar8.png" alt="test">
+                    <div class="lis">
+                      <p class="sp li-e name">Sandeep</p>
+                      <div class="liss">
+                        <p class="sp li-e ">23</p>
+                        <p>-</p>
+                        <p class="sp li-e ">Delhi</p>
+                      </div>
+                    </div>
+                  </div>
+                    <div class="lis mat">
+                      <p class=" li-e li-b bub">10% Matched</p>
+                    </div>
+                </li> -->
+            </ul>
+        </div>
+        <button class="bt" id="signOutBtn1">Sign Out</button>
+
+</div>
+</section>
+</div>
+
+  <div id="Quiz">
+  <div class="top-container">
+    <div class="">
+      <h1 class="title ttop">Findvalentineon.web.app</h1>
+    </div>
+  </div>
+  <div class="center-container">
+    <div class="top shadow">
+      <h1 class="" id="what">Tell me something about you...</h1>
+    </div>
+
+  <div id="nextquiz">
+    <h2>Lets go for quiz...</h2> 
+   <button class="bbutton" onclick="loadQuiz(qt)">Next Quiz</button>
+  </div>
+    <div class="quiz-container" id="quiz">
+        <div class="quiz-header">
+          <h2 id="question">Question Text</h2>
+          
+          <ul id="type1">
+            <center>
+              <li id="tt">
+                <input type="text" name="answer" autocomplete="off" id="text"  max="2003-12-31" >
+              </li>
+            </center>
+            </ul>
+          <ul id="type3">
+            <li id="aa">
+              <input type="radio" name="answer" id="a3" class="answer">
+              <label for="a3" id="a3_text">Answer</label>
+            </li>
+            <li id="bb">
+              <input type="radio" name="answer" id="b3" class="answer">
+              <label for="b3" id="b3_text">Answer</label>
+            </li>
+            <li id="cc">
+              <input type="radio" name="answer" id="c3" class="answer">
+              <label for="c3" id="c3_text">Answer</label>
+            </li>
+            <li id="dd">
+              <input type="radio" name="answer" id="d3" class="answer">
+              <label for="d3" id="d3_text">Answer</label>
+            </li>
+          </ul>
+          <ul id="type2">
+            <li>
+              <input type="radio" name="answer" id="a2" class="answer"  >
+              <label for="a2" id="a2_text">Answer</label>
+            </li>
+            <li>
+              <input type="radio" name="answer" id="b2" class="answer">
+              <label for="b2" id="b2_text">Answer</label>
+            </li>
+            </ul>
+        </div>
+        <button class="bbutton" id="submit">Next></button>
+        <button class="bbutton" id="submit2">Next></button>
+      </div>
+      
+    </div>
+    <button class="bt " id="signOutBtn2">Sign Out</button>
+    </div>
+  </section>
+<div id="end">
+  Copyright © 2022 Made with 💖 by <a target="_blank" href="https://www.linkedin.com/in/007hyno/">007hyno</a>. All Rights Reserved 
+</div>
+</body>
+</html>
