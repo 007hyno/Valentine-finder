@@ -4,8 +4,8 @@
 - Step3- Take a quick Personality quiz
 - Step4- Meet New people with similar interests.
 
-Web app to find people of having same interst with similarity meter.  Click link below to take a look 👇🏼😊
-[Valentine Finder](https://findvalentineon.web.app/).
+>Web app to find people of having same interst with similarity meter.  Click link below to take a look 👇🏼😊
+-[Valentine Finder](https://findvalentineon.web.app/).
 ## About  
 ## 🌄Screnshots:
 ### 👩‍🔬About:
